@@ -22,5 +22,15 @@ const images = [
   {
     url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
     alt: "Lighthouse Coast Sea",
-  }
+  },
 ];
+
+const imgList = document.querySelector(".gallery");
+const markup = images
+  .map(
+    (image) =>
+      `<li class="list-item"><img src="${image.url}" alt="${image.alt}" width=850></li>`
+  )
+  .join("");
+
+imgList.innerHTML = markup;
