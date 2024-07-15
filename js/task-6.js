@@ -27,8 +27,6 @@ function createBoxes(amount) {
     boxesContainer.append(box);
     size += 10;
   }
-
-  boxesContainer.innerHTML = box;
 }
 
 function handleDestroy() {
