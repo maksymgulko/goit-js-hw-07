@@ -16,7 +16,7 @@ function handleCreate() {
 function createBoxes(amount) {
   const boxesContainer = document.querySelector("#boxes");
   boxesContainer.innerHTML = "";
-
+  const tempBoxes = document.createDocumentFragment();
   let size = 30;
 
   for (let i = 0; i < amount; i++) {
@@ -24,9 +24,10 @@ function createBoxes(amount) {
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.append(box);
+    tempBoxes.appendChild(box);
     size += 10;
   }
+  boxesContainer.appendChild(tempBoxes);
 }
 
 function handleDestroy() {
